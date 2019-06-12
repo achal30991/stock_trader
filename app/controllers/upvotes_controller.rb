@@ -1,6 +1,6 @@
 class UpvotesController < ApplicationController
   def index
-    @upvotes = Upvote.all
+    @upvotes = Upvote.page(params[:page]).per(10)
 
     render("upvote_templates/index.html.erb")
   end

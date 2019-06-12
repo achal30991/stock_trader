@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.page(params[:page]).per(10)
 
     render("portfolio_templates/index.html.erb")
   end

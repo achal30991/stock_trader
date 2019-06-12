@@ -1,6 +1,6 @@
 class ExpertsController < ApplicationController
   def index
-    @experts = Expert.all
+    @experts = Expert.page(params[:page]).per(10)
 
     render("expert_templates/index.html.erb")
   end
