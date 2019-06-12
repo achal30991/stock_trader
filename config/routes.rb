@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :experts
+  # Routes for the Expert resource:
+
+  # READ
+  get("/experts", { :controller => "experts", :action => "index" })
+  get("/experts/:id_to_display", { :controller => "experts", :action => "show" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE
