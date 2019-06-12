@@ -1,6 +1,10 @@
 class Expert < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :foreign_key => "commenter_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
