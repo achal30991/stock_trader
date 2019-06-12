@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link portfolio start -->
       <div class="col">
         <a href="/portfolios/<%= @portfolio.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit portfolio
         </a>
       </div>
-      <!-- Edit link portfolio end -->
 
-      <!-- Delete link portfolio start -->
       <div class="col">
         <a href="/delete_portfolio/<%= @portfolio.id %>" class="btn btn-block btn-outline-secondary">
           Delete portfolio
         </a>
       </div>
-      <!-- Delete link portfolio end -->
     </div>
 
     <dl>
       <dt>
         Stock name
       </dt>
-      <!-- Display stock_name start -->
       <dd>
         <%= @portfolio.stock_name %>
       </dd>
-      <!-- Display stock_name end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @portfolio.user.present? %>
           <a href="/users/<%= @portfolio.user_id %>">
@@ -49,30 +42,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@portfolio.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@portfolio.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "portfolio_templates/portfolio_stocks" %>
@@ -84,4 +71,3 @@
     <%= render partial: "portfolio_templates/portfolio_comments" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

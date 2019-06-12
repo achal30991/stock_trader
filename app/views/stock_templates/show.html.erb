@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link stock start -->
       <div class="col">
         <a href="/stocks/<%= @stock.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit stock
         </a>
       </div>
-      <!-- Edit link stock end -->
 
-      <!-- Delete link stock start -->
       <div class="col">
         <a href="/delete_stock/<%= @stock.id %>" class="btn btn-block btn-outline-secondary">
           Delete stock
         </a>
       </div>
-      <!-- Delete link stock end -->
     </div>
 
     <dl>
       <dt>
         Portfolio
       </dt>
-      <!-- Display portfolio_id start -->
       <dd>
         <% if @stock.portfolio.present? %>
           <a href="/portfolios/<%= @stock.portfolio_id %>">
@@ -40,42 +35,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display portfolio_id end -->
 
       <dt>
         Stock tickr
       </dt>
-      <!-- Display stock_tickr start -->
       <dd>
         <%= @stock.stock_tickr %>
       </dd>
-      <!-- Display stock_tickr end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@stock.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@stock.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "stock_templates/stock_upvotes" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

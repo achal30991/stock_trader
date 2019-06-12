@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link upvote start -->
       <div class="col">
         <a href="/upvotes/<%= @upvote.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit upvote
         </a>
       </div>
-      <!-- Edit link upvote end -->
 
-      <!-- Delete link upvote start -->
       <div class="col">
         <a href="/delete_upvote/<%= @upvote.id %>" class="btn btn-block btn-outline-secondary">
           Delete upvote
         </a>
       </div>
-      <!-- Delete link upvote end -->
     </div>
 
     <dl>
       <dt>
         Stock
       </dt>
-      <!-- Display stock_id start -->
       <dd>
         <% if @upvote.stock.present? %>
           <a href="/stocks/<%= @upvote.stock_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display stock_id end -->
 
       <dt>
         Expert
       </dt>
-      <!-- Display expert_id start -->
       <dd>
         <% if @upvote.expert.present? %>
           <a href="/experts/<%= @upvote.expert_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display expert_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@upvote.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@upvote.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

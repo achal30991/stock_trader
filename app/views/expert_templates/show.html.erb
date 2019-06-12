@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link expert start -->
       <div class="col">
         <a href="/experts/<%= @expert.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit expert
         </a>
       </div>
-      <!-- Edit link expert end -->
 
     </div>
 
@@ -25,43 +23,34 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @expert.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @expert.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@expert.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@expert.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "expert_templates/expert_comments" %>
@@ -73,4 +62,3 @@
     <%= render partial: "expert_templates/expert_upvotes" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

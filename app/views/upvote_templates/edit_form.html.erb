@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form upvote start -->
 <form action="/update_upvote/<%= @upvote.id %>" method="post">
-<!-- Form upvote end -->
 
-  <!-- Label and input for stock_id start -->
   <div class="form-group">
     <label for="stock_id">
       Stock
     </label>
 
-    <!-- Input for stock_id start -->
     <%= select_tag(:stock_id, options_from_collection_for_select(Stock.all, :id, :portfolio_id, @upvote.stock_id), :class => "form-control") %>
-    <!-- Input for stock_id end -->
   </div>
-  <!-- Label and input for stock_id end -->
 
-  <!-- Label and input for expert_id start -->
   <div class="form-group">
     <label for="expert_id">
       Expert
     </label>
 
-    <!-- Input for expert_id start -->
     <%= select_tag(:expert_id, options_from_collection_for_select(Expert.all, :id, :email, @upvote.expert_id), :class => "form-control") %>
-    <!-- Input for expert_id end -->
   </div>
-  <!-- Label and input for expert_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update upvote
