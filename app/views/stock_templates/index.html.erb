@@ -58,7 +58,11 @@
 
         <!-- Display stock.portfolio_id start -->
         <td>
-          <%= stock.portfolio.created_at %>
+          <% if stock.portfolio.present? %>
+            <a href="/portfolios/<%= stock.portfolio.id %>">
+              <%= stock.portfolio.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display stock.portfolio_id end -->
 

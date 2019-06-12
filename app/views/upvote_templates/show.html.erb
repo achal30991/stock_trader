@@ -34,7 +34,11 @@
       </dt>
       <!-- Display stock_id start -->
       <dd>
-        <%= @upvote.stock_id %>
+        <% if @upvote.stock.present? %>
+          <a href="/stocks/<%= @upvote.stock_id %>">
+            <%= @upvote.stock.portfolio_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display stock_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display expert_id start -->
       <dd>
-        <%= @upvote.expert_id %>
+        <% if @upvote.expert.present? %>
+          <a href="/experts/<%= @upvote.expert_id %>">
+            <%= @upvote.expert.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display expert_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display portfolio_id start -->
       <dd>
-        <%= @stock.portfolio_id %>
+        <% if @stock.portfolio.present? %>
+          <a href="/portfolios/<%= @stock.portfolio_id %>">
+            <%= @stock.portfolio.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display portfolio_id end -->
 

@@ -58,13 +58,21 @@
 
         <!-- Display upvote.stock_id start -->
         <td>
-          <%= upvote.stock.portfolio_id %>
+          <% if upvote.stock.present? %>
+            <a href="/stocks/<%= upvote.stock.id %>">
+              <%= upvote.stock.portfolio_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display upvote.stock_id end -->
 
         <!-- Display upvote.expert_id start -->
         <td>
-          <%= upvote.expert.email %>
+          <% if upvote.expert.present? %>
+            <a href="/experts/<%= upvote.expert.id %>">
+              <%= upvote.expert.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display upvote.expert_id end -->
 

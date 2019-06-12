@@ -58,13 +58,21 @@
 
         <!-- Display comment.commenter_id start -->
         <td>
-          <%= comment.commenter.email %>
+          <% if comment.commenter.present? %>
+            <a href="/experts/<%= comment.commenter.id %>">
+              <%= comment.commenter.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.commenter_id end -->
 
         <!-- Display comment.portfolio_id start -->
         <td>
-          <%= comment.portfolio.created_at %>
+          <% if comment.portfolio.present? %>
+            <a href="/portfolios/<%= comment.portfolio.id %>">
+              <%= comment.portfolio.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.portfolio_id end -->
 

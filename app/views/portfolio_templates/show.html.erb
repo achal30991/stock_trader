@@ -43,7 +43,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @portfolio.user_id %>
+        <% if @portfolio.user.present? %>
+          <a href="/users/<%= @portfolio.user_id %>">
+            <%= @portfolio.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

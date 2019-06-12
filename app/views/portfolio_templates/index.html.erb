@@ -64,7 +64,11 @@
 
         <!-- Display portfolio.user_id start -->
         <td>
-          <%= portfolio.user.created_at %>
+          <% if portfolio.user.present? %>
+            <a href="/users/<%= portfolio.user.id %>">
+              <%= portfolio.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display portfolio.user_id end -->
 
