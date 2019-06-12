@@ -53,6 +53,22 @@ class UpvotesController < ApplicationController
     end
   end
 
+  def destroy_row_from_stock
+    @upvote = Upvote.find(params.fetch("id_to_remove"))
+
+    @upvote.destroy
+
+    redirect_to("/stocks/#{@upvote.stock_id}", notice: "Upvote deleted successfully.")
+  end
+
+  def destroy_row_from_expert
+    @upvote = Upvote.find(params.fetch("id_to_remove"))
+
+    @upvote.destroy
+
+    redirect_to("/experts/#{@upvote.expert_id}", notice: "Upvote deleted successfully.")
+  end
+
   def destroy_row
     @upvote = Upvote.find(params.fetch("id_to_remove"))
 

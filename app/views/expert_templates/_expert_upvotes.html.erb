@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Upvotes
+
+    <a data-toggle="collapse" href="#expert_upvotes_new_form">
+      Add upvote
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @expert.upvotes.each do |upvote| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/upvotes/<%= upvote.id %>">
+          <%= upvote.stock_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
