@@ -1,6 +1,7 @@
 class UpvotesController < ApplicationController
   def index
-    @upvotes = Upvote.page(params[:page]).per(10)
+    @q = Upvote.ransack(params[:q])
+    @upvotes = @q.result(:distinct => true).includes(:stock, :expert).page(params[:page]).per(10)
 
     render("upvote_templates/index.html.erb")
   end

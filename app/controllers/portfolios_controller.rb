@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
   def index
-    @portfolios = Portfolio.page(params[:page]).per(10)
+    @q = Portfolio.ransack(params[:q])
+    @portfolios = @q.result(:distinct => true).includes(:user, :stocks, :comments).page(params[:page]).per(10)
 
     render("portfolio_templates/index.html.erb")
   end
