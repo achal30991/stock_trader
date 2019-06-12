@@ -1,0 +1,44 @@
+<h1>
+  Edit portfolio #<%= @portfolio.id %>
+</h1>
+
+<hr>
+
+<!-- Form portfolio start -->
+<form action="/update_portfolio/<%= @portfolio.id %>" method="post">
+<!-- Form portfolio end -->
+
+  <!-- Label and input for stock_name start -->
+  <div class="form-group">
+    <label for="stock_name">
+      Stock name
+    </label>
+
+    <!-- Input for stock_name start -->
+    <input type="text" id="stock_name" name="stock_name" class="form-control" value="<%= @portfolio.stock_name %>">
+    <!-- Input for stock_name end -->
+  </div>
+  <!-- Label and input for stock_name end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @portfolio.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update portfolio
+  </button>
+</form>
+
+<hr>
+
+<a href="/portfolios">
+  Go back
+</a>
