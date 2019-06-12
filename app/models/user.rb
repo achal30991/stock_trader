@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_one    :portfolio,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
