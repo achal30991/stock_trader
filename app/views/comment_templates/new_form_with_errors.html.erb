@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for portfolio_id start -->
-    <input type="text" id="portfolio_id" name="portfolio_id" class="form-control" value="<%= @comment.portfolio_id %>">
+    <%= select_tag(:portfolio_id, options_from_collection_for_select(Portfolio.all, :id, :created_at, @comment.portfolio_id), :class => "form-control") %>
     <!-- Input for portfolio_id end -->
   </div>
   <!-- Label and input for portfolio_id end -->
