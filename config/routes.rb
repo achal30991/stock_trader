@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/upvotes/new", { :controller => "upvotes", :action => "new_form" })
   post("/create_upvote", { :controller => "upvotes", :action => "create_row" })
+  post("/create_upvote_from_stock", { :controller => "upvotes", :action => "create_row_from_stock" })
 
   # READ
   get("/upvotes", { :controller => "upvotes", :action => "index" })
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_portfolio", { :controller => "comments", :action => "create_row_from_portfolio" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -58,6 +60,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/stocks/new", { :controller => "stocks", :action => "new_form" })
   post("/create_stock", { :controller => "stocks", :action => "create_row" })
+  post("/create_stock_from_portfolio", { :controller => "stocks", :action => "create_row_from_portfolio" })
 
   # READ
   get("/stocks", { :controller => "stocks", :action => "index" })

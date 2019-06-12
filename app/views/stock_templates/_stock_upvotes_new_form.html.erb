@@ -1,0 +1,25 @@
+<!-- Form upvote start -->
+<form action="/create_upvote_from_stock" method="post">
+<!-- Form upvote end -->
+
+  <!-- Label and input for stock_id start -->
+  <!-- Input for stock_id start -->
+  <input type="hidden" name="stock_id" value="<%= @stock.id %>">
+  <!-- Input for stock_id end -->
+
+  <!-- Label and input for expert_id start -->
+  <div class="form-group">
+    <label for="expert_id">
+      Expert
+    </label>
+
+    <!-- Input for expert_id start -->
+    <input type="text" id="expert_id" name="expert_id" class="form-control" value="<%= @upvote.expert_id %>">
+    <!-- Input for expert_id end -->
+  </div>
+  <!-- Label and input for expert_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create upvote
+  </button>
+</form>

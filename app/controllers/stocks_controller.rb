@@ -6,6 +6,7 @@ class StocksController < ApplicationController
   end
 
   def show
+    @upvote = Upvote.new
     @stock = Stock.find(params.fetch("id_to_display"))
 
     render("stock_templates/show.html.erb")
@@ -27,6 +28,21 @@ class StocksController < ApplicationController
       @stock.save
 
       redirect_back(:fallback_location => "/stocks", :notice => "Stock created successfully.")
+    else
+      render("stock_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_portfolio
+    @stock = Stock.new
+
+    @stock.portfolio_id = params.fetch("portfolio_id")
+    @stock.stock_tickr = params.fetch("stock_tickr")
+
+    if @stock.valid?
+      @stock.save
+
+      redirect_to("/portfolios/#{@stock.portfolio_id}", notice: "Stock created successfully.")
     else
       render("stock_templates/new_form_with_errors.html.erb")
     end

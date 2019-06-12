@@ -1,0 +1,25 @@
+<!-- Form stock start -->
+<form action="/create_stock_from_portfolio" method="post">
+<!-- Form stock end -->
+
+  <!-- Label and input for portfolio_id start -->
+  <!-- Input for portfolio_id start -->
+  <input type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
+  <!-- Input for portfolio_id end -->
+
+  <!-- Label and input for stock_tickr start -->
+  <div class="form-group">
+    <label for="stock_tickr">
+      Stock tickr
+    </label>
+
+    <!-- Input for stock_tickr start -->
+    <input type="text" id="stock_tickr" name="stock_tickr" class="form-control" value="<%= @stock.stock_tickr %>">
+    <!-- Input for stock_tickr end -->
+  </div>
+  <!-- Label and input for stock_tickr end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create stock
+  </button>
+</form>

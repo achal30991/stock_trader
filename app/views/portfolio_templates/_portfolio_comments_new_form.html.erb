@@ -1,0 +1,25 @@
+<!-- Form comment start -->
+<form action="/create_comment_from_portfolio" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control" value="<%= @comment.commenter_id %>">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <!-- Label and input for portfolio_id start -->
+  <!-- Input for portfolio_id start -->
+  <input type="hidden" name="portfolio_id" value="<%= @portfolio.id %>">
+  <!-- Input for portfolio_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>

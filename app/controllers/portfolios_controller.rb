@@ -6,6 +6,8 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @stock = Stock.new
     @portfolio = Portfolio.find(params.fetch("id_to_display"))
 
     render("portfolio_templates/show.html.erb")
