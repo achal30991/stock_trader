@@ -4,6 +4,8 @@ RSpec.describe Upvote, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:expert) }
+
     it { should belong_to(:stock) }
 
     end
