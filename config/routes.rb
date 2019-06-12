@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "portfolios#index"
   # Routes for the Upvote resource:
 
   # CREATE
